@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ShopApplication.ViewModels.ShopsTotal>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<table class="table" name="shops">
+    <tr>
+        <th>
+            #
+        </th>
+        <th>
+            Магазин
+        </th>
+        <th>
+            Адрес
+        </th>
+        <th>
+            Консультант
+        </th>
+        <th>
+            Дата назначения
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShopName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConsultantName)
+            </td>
+            <td>
+                @item.Date
+            </td>
+        </tr>
+    }
+</table>
+
